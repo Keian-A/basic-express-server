@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
   res.status(200).send('General `/` Route Achieved');
 });
 
-app.use(auth);
+// app.use(auth);
 
-app.get('/person', (req, res) => {
+app.get('/person', auth, (req, res) => {
   res.status(200).json({ "name": req.query.name });
 });
 
