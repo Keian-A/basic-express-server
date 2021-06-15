@@ -13,6 +13,7 @@ app.use(logger);
 app.use(auth);
 
 // Routes
+// This first one should NOT work due to the auth application-level route being above, to fix you could put the auth inside the /person route as a parameter
 app.get('/', (req, res) => {
   res.status(200).send('General `/` Route Achieved');
 });
